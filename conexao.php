@@ -3,7 +3,7 @@
 /**
  * faz uma conexão com o bando de dados MySQL, na base de dados recuperar-senha
  * 
- * @return retorna uma conexão com a base de dados, ou em caso de falha, mata a execução e exibe o erro.
+ * @return \mysqli retorna uma conexão com a base de dados, ou em caso de falha, mata a execução e exibe o erro.
  */
 function conectar()
 {

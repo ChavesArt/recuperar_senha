@@ -17,6 +17,7 @@ if($resultado == false){
     echo"Erro ao inserir novo usuário!"
     . mysqli_errno($conexao) .": "
     .mysqli_error($conexao);
+    die();
 
 }
 header("location:index.php");

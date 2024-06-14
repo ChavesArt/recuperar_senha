@@ -18,5 +18,19 @@ if($resultado == false){
     die();
 
 }
+$usuario = mysqli_fetch_assoc($resultado);
+
+if($usuario == null){
+
+    echo" Email não existe no sistema! Por favor,primeiro realize ";
+}
+
+if($senha == $usuario['senha']){
+    header("Location:principal.php");
+}
+else{
+
+    echo"Email ou senha inválida! Tente novamente.";
+}
 
 ?>

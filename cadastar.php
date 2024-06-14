@@ -12,4 +12,12 @@ $senha = $_POST['senha'];
 $sql = "INSERT INTO usuario (nome,email,senha) values ('$nome','$email','$senha')";
 
 $resultado = mysqli_query($conexao,$sql);
+if($resultado == false){
+
+    echo"Erro ao inserir novo usuário!"
+    . mysqli_errno($conexao) .": "
+    .mysqli_error($conexao);
+
+}
+header("location:index.php");
 ?>

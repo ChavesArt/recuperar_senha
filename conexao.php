@@ -27,5 +27,8 @@ function executarSql($conexao,$sql)
         echo "Erro ao executar o comando SQL"
             . mysqli_errno($conexao) . ": "
             . mysqli_error($conexao);
+            die();
+
     }
+    return $resultado;
 }

@@ -1,5 +1,6 @@
 <?php
 
+require_once 'config.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -30,10 +31,10 @@ try {
     $mail ->setLanguage('br');
     $mail ->SMTPDebug = SMTP::DEBUG_SERVER; 
     $mail ->isSMTP();
-    $mail ->Host ='smtp.gmail.com';
+    $mail ->Host ='arthur.2022311833@aluno.iffar.edu.br';
     $mail ->SMTPAuth = true;
-    $mail ->Username = '';
-    $mail ->Password = '';
+    $mail ->Username = $config['email'];
+    $mail ->Password = $config['senha_email'];
     $mail ->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail ->Port = 587;
 } catch (Exception $e) {

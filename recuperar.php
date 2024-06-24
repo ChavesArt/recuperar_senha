@@ -67,7 +67,7 @@ try {
     //gravar as informações no banco
     $data = new DateTime('now');
     $agora = $data ->format('Y-m-d H:i:s');
-    $sql2 = "INSERT INTO recuperar_senha(email,token,data_criacao,usado)values ('" . $usuario['email'] . "','$token', , 0)";
+    $sql2 = "INSERT INTO recuperar_senha(email,token,data_criacao,usado)values ('" . $usuario['email'] . "','$token','$agora' , 0)";
 } catch (Exception $e) {
     echo "Não foi possível enviar o email.
     Mailer Error:{$mail->ErrorInfo}";

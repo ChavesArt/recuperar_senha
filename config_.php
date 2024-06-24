@@ -6,7 +6,5 @@ $config = [
     'pass' => '',
     'db' => '',
     'email' => '',
-    'senha_email' => '',
-]
-
-?>
+    'senha_email' => ''
+];

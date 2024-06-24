@@ -57,13 +57,17 @@ try {
     $mail->Body = 'olá<br>
     Você solicitou a recuperação da sua conta no snosso sistema.
     Para issomclique no link abaixo para realizar a troca de senha:<br>
-    <a href="' . $_SERVER['SERVER_NAME'] . '/nova-senha.php?email =' . $usuario['email'] .
+    <a href="' . $_SERVER['SERVER_NAME'] . '/recuperar_senha/nova-senha.php?email =' . $usuario['email'] .
         '&token = ' . $token . '">Clique aqui para recuperar o acesso à sua conta!</a><br>
     <br>
     Atenciosamente
     Equipe do sistema.';
     $mail->send();
     echo "Email enviado com sucess!<br>Confira o seu email";
+    //gravar as informações no banco
+    $data = new DateTime('now');
+    $agora = $data ->format('Y-m-d H:i:s');
+    $sql2 = "INSERT INTO recuperar_senha(email,token,data_criacao,usado)values ('" . $usuario['email'] . "','$token', , 0)";
 } catch (Exception $e) {
     echo "Não foi possível enviar o email.
     Mailer Error:{$mail->ErrorInfo}";

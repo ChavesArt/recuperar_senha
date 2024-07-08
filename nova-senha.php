@@ -16,9 +16,12 @@ if($resultado == null){
     // verificar a validade do pedido (data_criacao)
     //verificar se o link foi usado ou não
     date_default_timezone_set('America/Sao_Paulo');
-    $data = new DateTime('now');
+    $agora = new DateTime('now');
     $data_criacao =DateTime::createFromFormat('Y-m-d H:i:s',$recuperar['data_criacao']);
     $umDia = DateInterval::createFromDateString('1 day');
     $dataExpiracao = date_add($data_criacao,$umDia);
+}
+if($agora > $dataExpiracao){
+    die('Funcionou!');
 }
 ?>
